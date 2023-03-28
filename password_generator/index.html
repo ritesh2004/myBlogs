@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Blog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Barlow:wght@500&family=Montserrat:wght@500&family=Poppins:wght@500&family=Roboto+Mono:wght@500&display=swap');
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: auto;
+            height: fit-content;
+            /* border: solid 1px black; */
+        }
+
+        .main {
+            width: 711px;
+            height: fit-content;
+            margin-top: 20px;
+            /* border: solid 1px black; */
+            /* padding: 10px; */
+        }
+
+        .heading {
+            font-family: 'Alkatra', cursive;
+            font-family: 'Barlow', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        #poster {
+            height: 400px;
+            width: auto;
+        }
+        .video{
+            width: 711px;
+            height: auto;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+        }
+        @media screen and (max-width: 735px) {
+            #poster{
+                width: 400px;
+                height: auto;
+            }
+            .main{
+                width: 400px;
+                height: fit-content;
+            }
+            .video{
+                width: 400px;
+                height: auto;
+            }
+        }
+        @media screen and (max-width: 420px) {
+            #poster{
+                width: 300px;
+                height: auto;
+            }
+            .main{
+                width: 300px;
+                height: fit-content;
+            }
+            .video{
+                width: 300px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <img id="poster" src="Python (1).jpg" alt="Blog Poster">
+            <h2 class="heading">Introduction</h2>
+            <p>In present days, cyber attack is one of the most dengerous attack in the virtual world. Cyber attack
+                causes enterprise damages, data loss or money loss through ransomware. Attackers mainly find
+                vulnerability of a system. One of the most mistake(This is not a mistake, it's a blunder) is "log in" to
+                a system by creating a weak password. Most of the people make their passwords in the name of their
+                names, pet's name, using date of birth etc. Or they even set their passwords like-
+                "Passwords123","abc123" etc. This passwords all are very weak passwords, attackers can easily guess the
+                passwords. Thus your online credencials, biodata or privacies can be steal. Therefore you have to create
+                strong passwords that contains special characters, numbers, capital and small alphabets. To protect your
+                accounts and passwords, here I am introducing an Idea and tutorial of making a password generator. By
+                making this project, you can learn about some basics of python like- File I/O, PIP, Function, Module.
+                You can also gain knowledges about how passwords generator works. So lets begin.
+            </p>
+            <h2 class="heading">Tutorial</h2>
+            <p>
+                1. Import two modules "string" and "random" <br>
+                <code style="padding-left: 50px;">import string</code> <br>
+                <code style="padding-left: 50px;">import random</code> <br>
+                2. Take input from user. For which account or username they want to make passwords.
+                <code style="padding-left: 50px;">username = input("Enter username or Account name:")</code> <br>
+                3. Take input containing length of the passwords they want to create. <br>
+                <code
+                    style="padding-left: 50px;">length = int(input("Enter the length of the password you want to creat:"))</code>
+                <br>
+                4. Create a list for special characters and make a empty string. <br>
+                <code style="padding-left: 50px;">punctuationList = "!@#$%&*^/|\?"</code> <br>
+                <code style="padding-left: 50px;">characterList = ""</code> <br>
+                5. Now concatinate the string which we created named "characterList". Now to concatinate the string we
+                use some method like <code>string.ascii_uppercase, string.ascii_lowercase, string.digits</code>. These
+                are some methods where <code>string.ascii_uppercase</code> returns uppercase alphabets,
+                <code>sring.ascii_lowercase</code> reurns lowercase alphabets, <code>string.digits</code> returns
+                digits. <br>
+                <code style="padding-left: 50px;">characterList += string.ascii_uppercase</code> <br>
+                <code style="padding-left: 50px;">characterList += string.ascii_lowercase</code> <br>
+                <code style="padding-left: 50px;">characterList += string.digits</code> <br>
+                Now concatinating "punctuationList" also. <br>
+                <code style="padding-left: 50px;">characterList += punctuationList</code> <br>
+                6. Create an empty file in append mode. <br>
+                <code style="padding-left: 50px;">passFile = open("passwords.txt","a")</code> <br>
+                7. Create an empty list where our password will be stored. <br>
+                <code style="padding-left: 50px;">passwords = []</code> <br>
+                8. Now for creating the password first we need to execute a "for loop". This loop will be executed
+                whatever user inputed "The length of the passwords" that times. Then take a variable to pull one
+                character from the string named "characterList". We will use <code>random.choice()</code> method. Now
+                will use <code>list.append()</code> method to append pulled characters to the empty list which was
+                created in the name of 'password'. <br>
+                <code style="padding-left: 50px;">for i in range(length):</code> <br>
+                <code style="padding-left: 80px;">randChar = random.choice(characterList)</code> <br>
+                <code style="padding-left: 80px;">password.append(randChar)</code> <br>
+                9. To save the password the file "passwords.txt". <br>
+                <code
+                    style="padding-left: 50px;">passFile.write(f"{username} password is "+ "".join(password)+".\n")</code>
+            </p>
+            <h2 class="heading">Full Code</h2>
+            <div class="col-20 themed-grid-col " style="background-color: rgba(128, 151, 243, 0.388); border: solid 1px rgba(128, 151, 243, 0.5); border-radius: 5px;">
+                <code style="color: rgb(28, 24, 24);">
+                ### This is a password generator which creates strong passwords that you can stay safe ### <br>
+                ###### Author :- Ritesh Pramanik ###### <br>
+                import string <br>
+                import random <br>
+                print("Welcome to my Password Generator! This is a password generator which creates strong passwords that you can stay safe.") <br>
+                username = input("Enter username or Account name:") <br>
+                ###### Getting the length of the password ###### <br>
+                length = int(input("Enter the length of the password you want to creat:")) <br>
+                punctuationList = "!@#$%&*^/|\?" <br>
+                characterList = "" <br>
+                ###### Getting character set for password ###### <br>
+                characterList += string.ascii_uppercase <br>
+                characterList += string.ascii_lowercase <br>
+                characterList += string.digits <br>
+                characterList += punctuationList <br>
+                ###### Creating a dictionary for storing passwords ###### <br>
+                passFile = open("passwords.txt","a") <br>
+                ###### Making password ###### <br>
+                password = [] <br> 
+                for i in range(length): <br>
+                   <code style="padding-left: 30px; color: rgb(28, 24, 24);"> randChar = random.choice(characterList) </code> <br>
+                   <code style="padding-left: 30px; color: rgb(28, 24, 24);"> password.append(randChar) </code> <br>
+                ###### Getting the password ######
+                print("The Generated Password is " + "".join(password))
+                passFile.write(f"{username} password is "+ "".join(password)+".\n")
+
+                </code>
+            </div>
+            <h2 class="heading">Overview</h2>
+            <video class="video" src="cmd_xUJpQPRIby.mp4" controls></video>
+            <h2 class="heading">Project Github Repo</h2>
+            <a href="https://github.com/ritesh2004/ritesh2004/tree/main/PasswordGenerator">Click Me To Go To The Github Repo</a>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-c-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z" />
+                </svg>
+                <i class="bi bi-c-circle">Ritesh Pramanik-2023. All rights reserved</i>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
